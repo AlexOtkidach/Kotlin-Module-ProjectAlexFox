@@ -39,9 +39,8 @@ class MainActivity {
     }
 
     private fun readArchiveName(): String {
-        return readUserInput()
+        return readUserInput("Введите название архива: ")
     }
-
 
     private fun showArchiveList() {
         while (true) {
@@ -103,13 +102,6 @@ class MainActivity {
         }
     }
 
-    @JvmName("readUserInput1")
-    private fun String.readUserInput(): String {
-        print(this)
-        return scanner.nextLine()
-    }
-
-
     private fun createNoteListMenu(archive: Archive): Menu {
         val menuItems = mutableListOf<MenuItem>()
 
@@ -141,6 +133,7 @@ class MainActivity {
         return scanner.nextLine()
     }
 
+
     private fun addNoteToArchive(archive: Archive) {
         val noteTitle = readNoteTitle()
         val noteText = readNoteText()
@@ -158,6 +151,5 @@ class MainActivity {
     }
     private fun readUserInputExample() {
         val input = readUserInput()
-        // ...
     }
 }
